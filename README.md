@@ -1,1 +1,1 @@
-# LIMVSOD:A Novel Long-term Iterative MINING scheme For Video Salient Object Detection
+# LIMVSOD:A Novel Long-term Iterative Ming scheme For Video Salient Object Detection
