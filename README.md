@@ -33,7 +33,7 @@ All datasets can be downloaded at this [data link](http://dpfan.net/news/).
 
 3.Download the pre-trained models
 
-Download the following [pre-trained models](链接：https://pan.baidu.com/s/1n6nvPP1MvBGqGo26I32beQ (code:uidl) into pretmodel folder. 
+Download the following [pre-trained models](https://pan.baidu.com/s/1n6nvPP1MvBGqGo26I32beQ (code:uidl) into pretmodel folder. 
 
 3.Train
 run train.py
@@ -42,7 +42,7 @@ run train.py
 run test.py
 
 ## Data
-Our saliency detection results can be downloaded on [BaiduCloud](链接：https://pan.baidu.com/s/1Nm-VLBMGbR9fmdSqQWAEQg (code:pnvp). 
+Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1Nm-VLBMGbR9fmdSqQWAEQg (code:pnvp). 
 
 
 Thanks to [CPD](https://github.com/wuzhe71/CPD), [PWC-net](https://github.com/sniklaus/pytorch-pwc) and [EfficientDet](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)
