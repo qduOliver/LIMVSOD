@@ -45,7 +45,7 @@ run test.py
 Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/102o67mnMmKzHh2jnSYVJdA)(code:uj9v). 
 
 
-Thanks to [CPD](https://github.com/wuzhe71/CPD), [PWC-net](https://github.com/sniklaus/pytorch-pwc) and [EfficientDet]https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch
+Thanks to [CPD](https://github.com/wuzhe71/CPD), [PWC-net](https://github.com/sniklaus/pytorch-pwc) and [EfficientDet](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)
 
 
 
