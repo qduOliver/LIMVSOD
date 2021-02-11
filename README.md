@@ -10,7 +10,7 @@ The training and testing experiments are conducted using PyTorch 1.1.0 with a si
 * torchvision
 
 ## Update
-The training code has been uploaded
+The training code will be uploaded
 ## Todo
 Upload data preprocessing code
 ## Usage
