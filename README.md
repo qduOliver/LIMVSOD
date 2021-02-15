@@ -41,6 +41,9 @@ run train.py
 4.Test
 run test.py
 
+## Train
+# prepare object detection
+
 ## Data
 Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1Nm-VLBMGbR9fmdSqQWAEQg (code:pnvp). 
 
