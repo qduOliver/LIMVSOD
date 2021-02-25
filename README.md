@@ -42,7 +42,9 @@ run train.py
 run test.py
 
 ## Train
-### prepare object detection
+### Prepare Object Detection
+Please download the object detection code according to this github link[EfficientDet](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch), we set threshold = 0.01, iou_threshold = 0.2.
+The maximum number of boxes is 10.
 
 ## Data
 Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1Nm-VLBMGbR9fmdSqQWAEQg (code:pnvp). 
