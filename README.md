@@ -9,9 +9,9 @@ The training and testing experiments are conducted using PyTorch 1.1.0 with a si
 * torchvision
 
 ## Update
-The training code will be uploaded
+The KFS(Key Frames Select) code will be uploaded
 ## Todo
-Upload data preprocessing code
+Upload tool code
 ## Usage
 1.Clone
 
