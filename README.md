@@ -1,4 +1,3 @@
-
 # LIMVSOD
 ## A Novel Long-term Iterative Ming Scheme For Video Salient Object Detection
 
@@ -35,11 +34,11 @@ All datasets can be downloaded at this [data link](http://dpfan.net/news/).
 
 Download the following [pre-trained models](https://pan.baidu.com/s/1n6nvPP1MvBGqGo26I32beQ (code:uidl) into pretmodel folder. 
 
-3.Train
-run train.py
+4.Train
+run cpd/train.py
 
-4.Test
-run test.py
+5.Test
+run cpd/test.py
 
 ## Train
 ### Prepare Object Detection
@@ -50,7 +49,7 @@ First use [PWC-net](https://github.com/sniklaus/pytorch-pwc) to generate the opt
 ### Prepare Classifier
 Please cd Classifier, Then run train_resnet18.py to train this model, run test_resnet18.py to produce prediction results.
 ### K-means
-Please cd K-means, 
+Please cd K-means, and run k-means.py 
 
 ## Data
 Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1Nm-VLBMGbR9fmdSqQWAEQg (code:pnvp). 
