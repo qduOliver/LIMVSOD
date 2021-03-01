@@ -40,7 +40,7 @@ run cpd/train.py
 5.Test
 run cpd/test.py
 
-## Train
+## Preparatory work
 ### Prepare Object Detection
 Please download the object detection code according to this github link [EfficientDet](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch), we set threshold = 0.01, iou_threshold = 0.2. The maximum number of boxes is 10.
 You can download it yourself according to the link and modify the relevant parameters, or you can directly use our modified code, the relevant code is in the OB folder.
