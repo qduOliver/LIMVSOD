@@ -48,7 +48,7 @@ You can download it yourself according to the link and modify the relevant param
 ### Prepare Motion Saliency
 First use [PWC-net](https://github.com/sniklaus/pytorch-pwc) to generate the optical flow, and then use the davis training set of VSOD to fine-tune the [CPD](https://github.com/wuzhe71/CPD) model
 ### Prepare Classifier
-
+Please cd Classifier， Then run 
 ### k-means
  
 
