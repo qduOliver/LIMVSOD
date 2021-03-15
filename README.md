@@ -18,10 +18,10 @@ First, please download the object detection method EfficientDet, then modify the
 3.Initialize/Updata the classifier label
 We initialize saliency clusters and non-saliency clusters using thresholds. Then, We use two measurements to select a reliable training sample for the first iteration.
 (1)the distance to the cluster's centroid (2)the motion saliency degree of each object proposal.
-Please run Tools/
+Please run Tools/Sample_filtering.py
 
 5.Generate and assemble patch-level saliency map
-
+Please train patch-level prediction models according to the tips in the paper. 
 7.KFS(Key Frame Selection)
 
 9.Online Fine-tuning
