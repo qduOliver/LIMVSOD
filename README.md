@@ -8,17 +8,16 @@ The training and testing experiments are conducted using PyTorch 1.1.0 with a si
 * PyTorch 1.1.0
 * torchvision
 
-## Update
-The KFS(Key Frames Select) code will be uploaded
-## Todo
-Upload tool code
 ## Usage
+
 ### Train
 1.Generate object Proposals
-2.Initialize/Updata the classifier label
-3.Generate and assemble patch-level saliency map
-4.KFS(Key Frame Selection)
-5.Online Fine-tuning
+First, please download the object detection method EfficientDet, then modify the relevant parameters according to the content of the Preparatory work part, and finally rank all objects proposals according to objectness confidence, the maximum of 10 objects proposals.
+
+3.Initialize/Updata the classifier label
+4.Generate and assemble patch-level saliency map
+5.KFS(Key Frame Selection)
+6.Online Fine-tuning
 
 ### Test
 1.Clone
