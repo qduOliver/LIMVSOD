@@ -13,6 +13,14 @@ The KFS(Key Frames Select) code will be uploaded
 ## Todo
 Upload tool code
 ## Usage
+### Train
+1.Generate object Proposals
+2.Initialize/Updata the classifier label
+3.Generate and assemble patch-level saliency map
+4.KFS(Key Frame Selection)
+5.Online Fine-tuning
+
+### Test
 1.Clone
 
 git clone https://github.com/qduOliver/LIMVSOD.git
@@ -34,10 +42,7 @@ All datasets can be downloaded at this [data link](http://dpfan.net/news/).
 
 Download the following [pre-trained models](https://pan.baidu.com/s/1n6nvPP1MvBGqGo26I32beQ (code:uidl) into pretmodel folder. 
 
-4.Train
-run cpd/train.py
-
-5.Test
+4.Test
 run cpd/test.py
 
 ## Preparatory work
