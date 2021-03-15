@@ -15,16 +15,22 @@ The training and testing experiments are conducted using PyTorch 1.1.0 with a si
 
 First, please download the object detection method EfficientDet, then modify the relevant parameters according to the content of the Preparatory work part, and finally rank all objects proposals according to objectness confidence, the maximum of 10 objects proposals.
 
-3.Initialize/Updata the classifier label
+2.Initialize/Updata the classifier label
 We initialize saliency clusters and non-saliency clusters using thresholds. Then, We use two measurements to select a reliable training sample for the first iteration.
 (1)the distance to the cluster's centroid (2)the motion saliency degree of each object proposal.
 Please run Tools/Sample_filtering.py
 
-5.Generate and assemble patch-level saliency map
-Please train patch-level prediction models according to the tips in the paper. 
-7.KFS(Key Frame Selection)
+3.Generate and assemble patch-level saliency map
+Please train patch-level prediction models according to the tips in the paper. Then combine the saliency results at the patch level, and the combination code is the max_map.py file under Tools.
 
-9.Online Fine-tuning
+4.KFS(Key Frame Selection)
+In order to select high-quality key frames, we take the following two steps：
+(1) We compute the S-measure value between FS and MS. See the code Tools/s_measure_fs_ms.py
+(2) Run Tools/KFS.py to filter key frame by S-measure value.
+
+5.Online Fine-tuning
+The selected key frame is treated as pseudoGT and fine-tuned to obtain the final prediction weight
+
 
 ### Test
 1.Clone
