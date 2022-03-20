@@ -13,7 +13,7 @@ The training and testing experiments are conducted using PyTorch 1.1.0 with a si
 ### Train
 1.Generate object Proposals
 
-First, please download the object detection method EfficientDet, then modify the relevant parameters according to the content of the Preparatory work part, and finally rank all objects proposals according to objectness confidence, the maximum of 10 objects proposals.
+First,  please download the object detection method EfficientDet, then modify the relevant parameters according to the content of the Preparatory work part, and finally rank all objects proposals according to objectness confidence, the maximum of 10 objects proposals.
 
 2.Initialize/Updata the classifier label
 
