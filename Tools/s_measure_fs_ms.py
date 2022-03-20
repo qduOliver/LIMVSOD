@@ -1,65 +1,78 @@
-# -*- coding: utf-8 -*-
 import random
 import os
 import shutil
 from evalutor_my_bbox import Eval_thread
 import cv2
 import matplotlib.pyplot as plt
-from PIL import Image
-from skimage import data,filters
+
+from skimage import data, filters
 
 import numpy as np
 
-dataset_list = ['davis_test','Visal','Easy-35','VOS_test_png']
+datasets = ['VOS_test_png']
+# datasets = ['VOS_test_png']
+for d in range(0,len(datasets)):
+    pt = '14pt'
+    dataset = datasets[d]
+    total_ms_path = 'F:\source\CPD_pwc_11yearresult/%s/'%dataset
+    total_patch_path = r'F:\source\tableV\5patchPaste\%s/%s/'%(pt,dataset)
+    total_path_save = r'F:\source\tableV\6Smeasure_result\11/%s/%s/'%(pt,dataset)
+    total_txt_path = r'F:\source\tableV\6Smeasure_result\22/%s/%s/'%(pt,dataset)
+    folders = os.listdir(total_ms_path)
 
-for sj in range(0,len(dataset_list)):
+    for i in range(0, len(folders)):
+        folder = folders[i]
+        img_path = total_ms_path + folder + '/'
+        txt_folder_path = total_txt_path + folder + '/'
+        if os.path.exists(txt_folder_path):
+            print('exist')
+        else:
+            os.makedirs(txt_folder_path)
+        # 到folder哪一级了
+        if not os.path.exists(total_path_save + folder):
+            os.makedirs(total_path_save + folder)
+        else:
+            print("exist")
+        imgs = os.listdir(img_path)
+        txt_path = txt_folder_path + '%s.txt' % folder
+        txt = open(txt_path,'a')
+        for a in range(0, len(imgs)):
 
-    dataset = dataset_list[sj]
-    #
-    fs_path = r'D:\code\new_5\7_paste\calss\no_full/%s/'%(dataset)
-    ms_path = r'D:\dataset\flo_s\CPD_ms\720_flo_CPD_VGG_fine_davis2000all_lr4_b10_49_bi/%s/'%(dataset)
+            #        img=str(video)+'_'+'%05d'%(a[i])+'.png'
+            img = imgs[a]
 
-    save_path = r'D:\code\new_5\7_paste\class_no_full_smeature_v/%s/'%(dataset)
 
-    videos = os.listdir(fs_path)
+            ms_path = img_path + img
+            patch_path = total_patch_path + folder + '/' + img
+            if not os.path.exists(patch_path):
+                print("不存在名叫 %s 图片"%img)
+                continue
 
-    for i in range(0,len(videos)):
-        #GT_object_level
-        #ground-truth
-        video=videos[i]
-        pris_path = fs_path+video
-        mss_path = ms_path+video
-        pris=os.listdir(pris_path)
 
-        if not os.path.exists(save_path+video):
-            os.makedirs(save_path+video)
+            img_tu = plt.imread(ms_path)
 
-        length=len(pris)
-        for a in range(0,length-1):
+            cs = plt.imread(patch_path)
+            cs1 = cs[:,:,1]
 
-            pri=pris[a]
 
-            pri_img_path=pris_path+'/'+pri
-            ms_img_path=mss_path+'/'+pri
+            s_meature = Eval_thread(cs1, img_tu, True)
+            sm_value = round(s_meature.run(), 3)
+            # print(sm_value)
 
-            if os.path.exists(pri_img_path):
+            cv2.imwrite(total_path_save + folder + '/' + img[:-4] + '=' + str(sm_value) + '.png', cs * 255)
+            txt.write(total_path_save + folder + '/' + img + '  score : %s'%sm_value + '\n')
 
-                gt=cv2.imread(pri_img_path,0)
-                gt = gt.astype(np.float32)
-                gt=gt/255
+            thresh_end = filters.threshold_otsu(img_tu)  # 返回一个阈值
+            cc = (img_tu >= thresh_end)*1.0
 
-                img_1=cv2.imread(ms_img_path,0)
-                img_1 = img_1.astype(np.float32)
-                img_1=img_1/255
+            cc = cc.astype(np.float)
+        txt.close()
+            #下面这个代码，是用来保存，大于某个阈值的图片
+            # if sm_value > 0.90:
+            #
+            #     if not os.path.exists(path_select + folder):
+            #         os.makedirs(path_select + folder)
+            #
+            #     cv2.imwrite(path_select + folder + '/' + img, img_tu_bi * 255)
 
-                shape=gt.shape
-                width=shape[1]
-                hight=shape[0]
 
-                img_1 =cv2.resize(img_1,(width,hight))
-
-                w=Eval_thread(gt,img_1,True)
-                w=round(w.run(),3)
-                print(w)
-
-                cv2.imwrite(save_path+video+'/'+pri[:-4]+'_'+str('%.3f'%(w))+'.png',gt*255)
