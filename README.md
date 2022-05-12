@@ -73,7 +73,7 @@ Please cd Classifier, Then run train_resnet18.py to train this model, run test_r
 Please cd K-means, and run k-means.py 
 
 ## Data
-Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1Nm-VLBMGbR9fmdSqQWAEQg (code:pnvp). 
+Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1SG-8N_bYD58goOZvC0kzaQ (code:cclz). 
 
 
 Thanks to [CPD](https://github.com/wuzhe71/CPD), [PWC-net](https://github.com/sniklaus/pytorch-pwc) and [EfficientDet](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)
