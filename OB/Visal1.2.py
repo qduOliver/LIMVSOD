@@ -9,7 +9,7 @@ import numpy as np
 # davis_test
 # Easy-35
 # VOS_test_png_gt
-# 这个是用来计算patch的白色像素点个数占frame像素点个数的比重。
+# 这个是用来计算patch的白色像素点个数占frame像素点个数的比重。如果比重太低，就降低该box在初始正负样本时的数值，让它作用降低。
 dataset_list = ['Segtrack-v2', 'Visal']
 
 for a in range(0, len(dataset_list)):
