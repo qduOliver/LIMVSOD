@@ -1,1 +1,8 @@
-1.efficient_test_video.py-->top3_add_top10.py-->my_NMS.py-->txt_cut_img.py.
+1.efficient_test_video.py-->top3_add_top10.py-->my_NMS.py-->txt_cut_img.py---Visal1.2.
+
+In the first step, use efficient_test_video.py to detect the optical flow, get up to 3 object boxes, the coordinates are stored in the txt file; 
+then use efficient_test_video.py to detect the RGB diagram, get up to 10 object boxes, and the object frame coordinates are stored in the txt file.
+Note  .py parameter settings in the file (3, 10). 
+In the second step, use top3_add_top10.py to put together the  object boxes obtained in the first step. 
+The third step is to use my_NMS.py to remove the object boxes with a high repetition rate. 
+In the fourth step, use txt_cut_img.py to crop the object boxes from the original picture according to the coordinates of the object boxes.
