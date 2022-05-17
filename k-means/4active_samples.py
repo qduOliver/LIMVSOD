@@ -3,14 +3,7 @@ import numpy as np
 import shutil
 
 # davis_test
-# Segtrack-v2
-# Visal
-# Easy-35
-# VOS_test_png   1.8
-
-#dataset_list = ['Segtrack-v2','Visal','Easy-35','VOS_test_png']
-# for jj in range(10,20):
-#      ff = str(jj)
+# 根据每个聚类的motion value的值，得到我们大致的正样本类。
 
 dataset_list = ['VOS_test_png']
 # dataset_list = ['tryData']
