@@ -22,6 +22,8 @@ First,  please download the object detection method EfficientDet, then modify th
 2.Initialize/Updata the classifier label(k-means)
 
 We initialize saliency clusters and non-saliency clusters using thresholds. Then, We use two measurements to select a reliable training sample for the first iteration.
+
+
 (1)the distance to the cluster's centroid (2)the motion saliency degree of each object proposal.
 
 3.Train the classifier(Classifier)
@@ -34,6 +36,8 @@ Please train patch-level prediction models according to the tips in the paper. T
 4.KFS(Key Frame Selection)(Tools)
 
 In order to select high-quality key frames, we take the following two steps：
+
+
 (1) We compute the S-measure value between FS and MS. See the code Tools/Compute_S_Measure.py
 (2) Run Tools/KFS_sen.py to filter key frame by S-measure value.
 
