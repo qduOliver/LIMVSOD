@@ -2,10 +2,10 @@
 ## A Novel Long-term Iterative Ming Scheme For Video Salient Object Detection
 
 ## Prerequisites
-The training and testing experiments are conducted using PyTorch 1.1.0 with a single GeForce RTX 2080Ti GPU with 11GB Memory.
+The training and testing experiments are conducted using PyTorch 1.2.0 with a single GeForce RTX 2080Ti GPU with 11GB Memory.
 * Windows
 * CUDA v10.1, cudnn v.7.5.0
-* PyTorch 1.1.0
+* PyTorch 1.2.0
 * torchvision 0.4.0
 
 ## Usage
