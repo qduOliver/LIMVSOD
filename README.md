@@ -1,39 +1,32 @@
-# LIMVSOD
-## A Novel Long-term Iterative Ming Scheme For Video Salient Object Detection
-
-## Prerequisites
-The training and testing experiments are conducted using PyTorch 1.1.0 with a single GeForce RTX 2080Ti GPU with 11GB Memory.
-* Windows
-* CUDA v10.1, cudnn v.7.5.0
-* PyTorch 1.1.0
-* torchvision
-
 ## Usage
 
 ### Train
-1.Generate object Proposals
+The training process is :OB-->k-means-->Classifier-->Tools-->CPD
+1.Generate object Proposals（OB）
 
 First,  please download the object detection method EfficientDet, then modify the relevant parameters according to the content of the Preparatory work part, and finally rank all objects proposals according to objectness confidence, the maximum of 10 objects proposals.
 
-2.Initialize/Updata the classifier label
+2.Initialize/Updata the classifier label(k-means)
 
 We initialize saliency clusters and non-saliency clusters using thresholds. Then, We use two measurements to select a reliable training sample for the first iteration.
 (1)the distance to the cluster's centroid (2)the motion saliency degree of each object proposal.
-Please run Tools/Sample_filtering.py
 
-3.Generate and assemble patch-level saliency map
+3.Train the classifier(Classifier)
+Gradually improve the credibility of the classifier by training the classifier to iteratively mine reliable data
 
+
+3.Generate and assemble patch-level saliency map(Tools)
 Please train patch-level prediction models according to the tips in the paper. Then combine the saliency results at the patch level, and the combination code is the max_map.py file under Tools.
 
-4.KFS(Key Frame Selection)
+4.KFS(Key Frame Selection)(Tools)
 
 In order to select high-quality key frames, we take the following two steps：
-(1) We compute the S-measure value between FS and MS. See the code Tools/s_measure_fs_ms.py
-(2) Run Tools/KFS.py to filter key frame by S-measure value.
+(1) We compute the S-measure value between FS and MS. See the code Tools/Compute_S_Measure.py
+(2) Run Tools/KFS_sen.py to filter key frame by S-measure value.
 
-5.Online Fine-tuning
+5.Online Fine-tuning(CPD)
 
-The selected key frame is treated as pseudoGT and fine-tuned to obtain the final prediction weight
+The selected key frame is treated as pseudoGT and fine-tuned CPD to obtain the final prediction weight
 
 
 ### Test
@@ -59,7 +52,7 @@ All datasets can be downloaded at this [data link](http://dpfan.net/news/).
 Download the following [pre-trained models](https://pan.baidu.com/s/1n6nvPP1MvBGqGo26I32beQ (code:uidl) into pretmodel folder. 
 
 4.Test
-run cpd/test.py
+run cpd/test_CPD.py
 
 ## Preparatory work
 ### Prepare Object Detection
@@ -70,13 +63,11 @@ First use [PWC-net](https://github.com/sniklaus/pytorch-pwc) to generate the opt
 ### Prepare Classifier
 Please cd Classifier, Then run train_resnet18.py to train this model, run test_resnet18.py to produce prediction results.
 ### K-means
-Please cd K-means, and run k-means.py 
+Please cd K-means, and run 2k-means.py 
 
 ## Data
 Our saliency detection results can be downloaded on [BaiduCloud](https://pan.baidu.com/s/1SG-8N_bYD58goOZvC0kzaQ (code:cclz). 
 
 
 Thanks to [CPD](https://github.com/wuzhe71/CPD), [PWC-net](https://github.com/sniklaus/pytorch-pwc) and [EfficientDet](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)
-
-
 
