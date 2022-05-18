@@ -1,1 +1,14 @@
+# pip install -r requirements.txt
+
+
+matplotlib=3.34
+numpy=1.19.5
+opencv-python=4.5.5
+Pillow=8.4.0
+
+scipy=1.5.4
+torch=1.2.0
+torchvision=0.4.0
+tqdm=4.64.0
+joblib=1.1.0
 
