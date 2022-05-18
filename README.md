@@ -24,24 +24,24 @@ First,  please download the object detection method EfficientDet, then modify th
 
 We initialize saliency clusters and non-saliency clusters using thresholds. Then, We use two measurements to select a reliable training sample for the first iteration.
 
-
 (1)the distance to the cluster's centroid (2)the motion saliency degree of each object proposal.
 
 3.Train the classifier(Classifier)
 Gradually improve the credibility of the classifier by training the classifier to iteratively mine reliable data
 
 
-3.Generate and assemble patch-level saliency map(Tools)
-Please train patch-level prediction models according to the tips in the paper. Then combine the saliency results at the patch level, and the combination code is the max_map.py file under Tools.
+4.Generate and assemble patch-level saliency map(Tools)
+Please train patch-level prediction models according to the tips in the paper. Then combine the saliency results at the patch level, and the combination code is the Visal11.2.py file under Tools.
 
-4.KFS(Key Frame Selection)(Tools)
+5.KFS(Key Frame Selection)(Tools)
 
 In order to select high-quality key frames, we take the following two steps：
+
 (1) We compute the S-measure value between FS and MS. See the code Tools/Compute_S_Measure.py
 
 (2) Run Tools/KFS_sen.py to filter key frame by S-measure value.
 
-5.Online Fine-tuning(CPD)
+6.Online Fine-tuning(CPD)
 
 The selected key frame is treated as pseudoGT and fine-tuned CPD to obtain the final prediction weight
 
