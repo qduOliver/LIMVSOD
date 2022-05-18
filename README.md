@@ -27,10 +27,12 @@ We initialize saliency clusters and non-saliency clusters using thresholds. Then
 (1)the distance to the cluster's centroid (2)the motion saliency degree of each object proposal.
 
 3.Train the classifier(Classifier)
+
 Gradually improve the credibility of the classifier by training the classifier to iteratively mine reliable data
 
 
 4.Generate and assemble patch-level saliency map(Tools)
+
 Please train patch-level prediction models according to the tips in the paper. Then combine the saliency results at the patch level, and the combination code is the Visal11.2.py file under Tools.
 
 5.KFS(Key Frame Selection)(Tools)
