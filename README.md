@@ -15,6 +15,7 @@ The training and testing experiments are conducted using PyTorch 1.2.0 with a si
 
 ### Train
 The training process is :OB-->k-means-->Classifier-->Tools-->CPD
+
 1.Generate object Proposals（OB）
 
 First,  please download the object detection method EfficientDet, then modify the relevant parameters according to the content of the Preparatory work part, and finally rank all objects proposals according to objectness confidence, the maximum of 10 objects proposals.
@@ -36,9 +37,8 @@ Please train patch-level prediction models according to the tips in the paper. T
 4.KFS(Key Frame Selection)(Tools)
 
 In order to select high-quality key frames, we take the following two steps：
-
-
 (1) We compute the S-measure value between FS and MS. See the code Tools/Compute_S_Measure.py
+
 (2) Run Tools/KFS_sen.py to filter key frame by S-measure value.
 
 5.Online Fine-tuning(CPD)
