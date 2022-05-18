@@ -12,4 +12,4 @@ Then,4, 5 and 6 are to divide the 8 clusters into positive and negative samples 
 
 Then,7motionValue_choose.py and 8second_julei.py filter positive and negative samples by motion value and distance to the center of the class, respectively.  
 
-Finally 9firsttrain_data.py got the data used to train the classifier for the first time.
+Finally 9first_train_data.py got the train data used to train the classifier for the first time.
